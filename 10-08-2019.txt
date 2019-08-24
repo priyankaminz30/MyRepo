@@ -1,0 +1,272 @@
+10-8-2019
+
+to install software-yum 
+yum insstall software name
+
+rpm-redhat package manager
+to insttall rpm fil but it doesn't install dependant files
+rpm ivh packagae.rpm 
+wget < link >- to download 
+
+yum remove- to uninstall software 
+rpm -iuh package.rpm - to uninstll software 
+
+yum list- to know how many softwares in yum repo
+
+init 0 -to shut down linux
+init 6- to restart
+init 2- multi user mode
+
+
+yum update - to update software in yum repo
+
+Service <service name> status -----in place to status use start/stop/restart
+
+Systsemctl status <service name> 
+
+----------------------------------------
+
+Shell Scripting
+
+scripting doens't need complier. it directly executes and that's the reaon its fast.
+--to automate the repeatative jobs we use scripting
+shell-- interface between usr and kernel
+
+Types of shell
+1. C Shell----old shells not using 
+2. K shell (Korn)----old shells not using 
+3. Bash Shell(Bourne Again Shell)
+
+
+awk '{print $5}' file
+
+cut -c1 filename 
+cut -c2-5 file
+
+ssh user@servername ---to jump to another server
+
+scp <sourcefilename> <destination filename>
+scp \path of the file user@i.p traget file path
+
+#!|bin|bash- the first line of the shell scripting and is called as shebang.
+It means that interpreter will tell to kernel that you are going to use bash shell.
+
+#!/bash/kshell
+
+
+
+#!/bin/bash 
+echo "helloworld"
+
+
+192.168.213.128
+
+
+./ first
+
+
+
+
+
+Note: 10 server in the list. I want to login to each server and check the disk space and if the disk space is >70% then delete or archieve 30 days older logs files. 
+
+Command Line Arguements
+---------------------------
+
+./cmd line args.sh 10 20 30
+
+$0- to print script name 
+$*/$@- display the parameters we have passed in the script
+$?-the exit status in previous command 
+$#- display the number of parameters
+$!- background running process id
+
+
+Conditional statements
+-----------------------
+if--else
+case
+and
+or
+
+
+if--else----
+if [ logical condition ]
+then 
+    statements 
+else
+     statements 
+fi
+
+
+Case-----
+case var in 
+opt1) statements
+      ;;
+opt2) statements
+      ;;
+esac
+
+to use and/or command in scripting -a/-o
+<--  -lt
+>--  -gt
+<=---  -le
+>=---   -ge
+!=-----   -ne
+==------- -eq
+
+
+Loop
+-----------
+1.for
+2.while
+
+
+for :
+
+for var in logical condition
+do 
+statement
+done
+
+
+
+for ((i=0;i<=1;i++))
+do
+statements
+done
+
+While:
+while [logical condition]
+do
+statemnets
+done
+
+Arrays
+--------
+
+arr=(------)
+
+$arr[@]:0}
+${arr[*]}
+
+To print all elements of array
+echo ${arr[@]}
+echo ${arr[*]}
+echo ${arr[@]:0}
+echo ${arr[*]:0}
+
+To print first element
+echo ${arr[0]}
+ech ${arr}
+
+To print particular element
+echo ${arr[3]}
+echo ${arr[1]}
+
+To print elements from a particular index
+echo ${arr[@]:0}
+echo ${arr[0]:1}
+
+To print elements in range
+echo ${arr[@]:1:4}
+echo ${arr[@]:2:3}
+arr
+      
+
+ awk '{print $5}' 13.233.97.141.txt | tail -3 |head -1 | cut -c1-2 >demo.txt
+
+
+ips=(13.233.97.141 172.31.4.100)
+for((i=0;i<2;i++))
+do
+echo "Doing tasks for IP : " ${ips[${i}]};
+ssh -i key.pem ec2-user@${ips[${i}]} "df -h; exit" >${ips[${i}]}.txt;
+awk '{print $5}' ${ips[${i}]}.txt | tail -3 |head -1 | cut -c1-2 >${ips[${i}]}-final.txt;
+if [ $(cat ${ips[${i}]}-final.txt) -ge 18 ]
+then
+echo "The memory is more than 18%";
+find . -mtime +30 -type f -name *.log-exec rm-rf {3\;
+else
+echo "The memory is less than 18%";
+fi
+done
+
+
+
+
+GIT
+------------
+
+Distributed version control system.
+
+file-Untracked file
+statging area--adding to the buffer location and is pointed by GIT HEAD
+Commit 
+
+
+ifup ens33
+git config --global user.name "Priyanka Minz"
+git 
+
+
+vi test.txt
+git add test.txt
+git commit -m "Mesage"
+git status
+git log -- oneline-- to see commit message
+git checkout filename-- to discard the local changes
+
+Stash- to save the file changes and it will be done in local
+git stash 
+git stash list
+git stash apply
+git stash drop/pop- for single stash
+git stash clear - for all 
+git stash drop stash@{}- to drop particular stash
+git stash apply stash@{}- to apply particular stash
+
+
+Empty or Bare repo
+git init --bare repo
+cd hook/
+cd info/
+
+
+Branching strategies
+---------------------
+git branch branchname
+git commit --amend  ---- to amend the commit message
+git show commitid
+git show filename
+git checkout -b branchname-- to go to branchname 
+
+
+Ho to resolve Merge conflicts
+-----------------------------------
+
+
+
+git tags
+git hub
+
+
+install softwares
+git bash
+tortoise git
+git hub desktop
+eclipse
+
+
+
+
+
+
+
+
+
+
+
+
+
+
